@@ -12,13 +12,13 @@ function ConfirmationPage() {
     <div className="wrapper confirm-page-wrapper">
       <Header btn_text="Выйти" loggedIn={true}/>  
       <main className="main">
-        <div className="content">
+        <section className="content">
           <h2>Подтвердите ваш e-mail</h2>
           <p className='text-grey'>{nameValid}, на ваш E-mail отправлено письмо со ссылкой для подтверждения. 
           Перейдите по ней, чтобы активировать вашу учетную запись и получить 7 дней бесплатного доступа. </p>
           <button className="blue-button">Перейти к почте</button>
-          <Link to="/no_letter_page" className="finaly-text blue-text" href='#'>Мне не пришло письмо</Link>
-        </div>
+          <Link to="/no_letter_page" className="finaly-text blue-text">Мне не пришло письмо</Link>
+        </section>
       </main>
     </div>
   );

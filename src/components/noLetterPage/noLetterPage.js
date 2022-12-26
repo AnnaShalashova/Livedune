@@ -21,7 +21,7 @@ function NoLetterPage() {
     <div className="wrapper noLetter-wrapper">
       <Header btn_text="Выйти" loggedIn={true}/>  
       <main className="main">
-        <div className="content">
+        <section className="content">
           <h1>Мне не пришло письмо</h1>
           <p className="text-grey">Письмо может прийти с задержкой в 5-10 минут.<br/>
           Также проверьте разные папки почтового ящика (актуально для gmail.com) и папку "Спам".
@@ -41,10 +41,10 @@ function NoLetterPage() {
               {errors?.email && <p>{errors?.email?.message}</p>}
             </div>
             <button type="submit" className="blue-button">Отправить заново</button>
-            <Link to="/confirmation" className="finaly-text grey-link" href='#'>Отменить</Link>
+            <Link to="/confirmation" className="finaly-text grey-link">Отменить</Link>
           </form>
 
-        </div>
+        </section>
       </main>
     </div>
   );

@@ -9,7 +9,7 @@ function Header({p_text, btn_text, loggedIn, path}) {
     return (
       <header className="header">
         <img className="logo" src={logo} alt="Logo company" width="120" height="40"></img>
-        <Link to="/" className="exit-button" href="#">{btn_text}</Link>
+        <Link to="/" className="exit-button">{btn_text}</Link>
       </header>
     );
   }
@@ -18,7 +18,7 @@ function Header({p_text, btn_text, loggedIn, path}) {
     <header className="header">
       <img className="logo" src={logo} alt="Logo company" width="120" height="40"></img>
       <p className='text-grey'>{p_text}</p>
-      <Link to={path} className="blue-button" href="#">{btn_text}</Link>
+      <Link to={path} className="blue-button">{btn_text}</Link>
     </header>
   );
 }

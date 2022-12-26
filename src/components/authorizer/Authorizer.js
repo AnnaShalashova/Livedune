@@ -19,7 +19,8 @@ function Authorizer() {
     formState: { errors },
     reset,
   } = useForm({
-    mode: "onBlur"
+    mode: "onBlur",
+    reValidateMode: "onSubmit"
   });
 
   const onSubmit = (data) => {
@@ -36,7 +37,7 @@ function Authorizer() {
     <div className="wrapper">
       <Header p_text="У вас нет аккаунта?" btn_text="Регистрация" path="/registration"/>  
       <main className="main">
-        <div className="content login-content">
+        <section className="content login-content">
           <h1>Войти</h1>
           <p className="text-grey">Добро пожаловать, рады видеть вас снова 👋</p>
           <div className="social-btn-container">
@@ -46,8 +47,8 @@ function Authorizer() {
           <p className="text-grey or-text">или</p>
 
           <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            <input className={errors?.email ? "error-input form-input" : "form-input"} placeholder='Email' {...register("email",{ 
-              required: "Введите email",})}>
+            <input className={errors?.email ? "error-input form-input" : "form-input"} type="email" placeholder='Email' {...register("email",{ 
+              required: "Введите email"})}>
             </input>
             <input className={errors?.password ? "error-input form-input" : "form-input"} type="password" placeholder='Пароль' {...register("password",{ 
               required: "Введите пароль",})}>
@@ -58,10 +59,9 @@ function Authorizer() {
               {errorMessage && <p>{errorMessage}</p>}
             </div>         
             <button type="submit" className="blue-button">Войти в аккаунт</button>
-            <Link to="/restore_password_page" className="finaly-text blue-text" href='#'>Забыли пароль?</Link>
+            <Link to="/restore_password_page" className="finaly-text blue-text">Забыли пароль?</Link>
           </form>
-          
-        </div>
+        </section>
       </main>
     </div>
   );

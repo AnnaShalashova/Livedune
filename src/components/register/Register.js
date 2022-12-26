@@ -37,7 +37,7 @@ function Register() {
     <div className="wrapper">
       <Header p_text="Уже есть аккаунт?" btn_text="Войти" path="/"/>  
       <main className="main">
-        <div className='content register-content'>
+        <section className='content register-content'>
           <h1>Регистрация</h1>
           <p className='text-grey'>Зарегистрируйся и получи доступ к аналитике аккаунтов. </p>
           <div className="social-btn-container">
@@ -56,12 +56,12 @@ function Register() {
             <div className="error-message">
               {errors?.firstName && <p>{errors?.firstName?.message}</p>}
             </div>
-          
+
             <input className={errors?.email ? "error-input form-input" : "form-input"} 
             placeholder='Email' {...register("email",{ 
               required: "Введите email",
               pattern: {
-                value: /^\S+@\S+$/i,
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 message: "Возможно вы ошиблись в указании почтового сервиса"
                 }})}>
             </input>
@@ -87,7 +87,7 @@ function Register() {
             <button type="submit" className="blue-button">Создать аккаунт</button>
             <p className="finaly-text">Создавая аккаунт, я согласен с <a className="blue-text" href='#'>условиями оферты</a></p>
           </form>
-        </div>
+        </section>
       </main>
     </div>
   );
