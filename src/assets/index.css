@@ -44,6 +44,7 @@ input {
   font-size: 14px;
   font-weight: 600;
   padding-right: 15px;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
