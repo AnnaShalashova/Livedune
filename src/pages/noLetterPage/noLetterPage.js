@@ -1,5 +1,5 @@
 import './noLetterPage.css';
-import Header from '../header/Header';
+import Header from '../../components/header';
 import { useForm } from 'react-hook-form';
 import { Link,useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ function NoLetterPage() {
 
   return (
     <div className="wrapper noLetter-wrapper">
-      <Header btn_text="Выйти" loggedIn={true}/>  
+      <Header btnText="Выйти" loggedIn={true}/>  
       <main className="main">
         <section className="content">
           <h1>Мне не пришло письмо</h1>

@@ -1,15 +1,15 @@
 
-import './Register.css';
-import facebook_icon from "../img/fasebook.svg";
-import google_icon from "../img/google.svg";
+import './RegistrationPage.css';
+import facebook_icon from "../../assets/img/fasebook.svg";
+import google_icon from "../../assets/img/google.svg";
 import { useForm } from 'react-hook-form';
-import Header from '../header/Header';
+import Header from '../../components/header';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../../redux/registerSlice';
 import { useNavigate } from 'react-router-dom';
 
-function Register() {
+function RegistrationPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ function Register() {
 
   return (
     <div className="wrapper">
-      <Header p_text="Уже есть аккаунт?" btn_text="Войти" path="/"/>  
+      <Header pText="Уже есть аккаунт?" btnText="Войти" path="/"/>  
       <main className="main">
         <section className='content register-content'>
           <h1>Регистрация</h1>
@@ -77,13 +77,9 @@ function Register() {
               {errors?.password && <p>{errors?.password?.message}</p>}             
             </div>  
 
-            { (() => {
-              if (!isPromoActive) {
-                return <button className="blue-text promo-button" onClick={handlePromoInput}>У меня есть промокод</button>;
-              } else {
-                return <input className="form-input" placeholder='Промокод' {...register("promo",{required: false})}></input>;
-              }})()
-            }
+            {isPromoActive ? <input className="form-input" placeholder='Промокод' {...register("promo",{required: false})}/> :
+            <button className="blue-text promo-button" onClick={handlePromoInput}>У меня есть промокод</button>}
+    
             <button type="submit" className="blue-button">Создать аккаунт</button>
             <p className="finaly-text">Создавая аккаунт, я согласен с <a className="blue-text" href='#'>условиями оферты</a></p>
           </form>
@@ -93,5 +89,5 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegistrationPage;
 

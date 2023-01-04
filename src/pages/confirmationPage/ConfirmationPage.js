@@ -1,6 +1,6 @@
 
 import './ConfirmationPage.css';
-import Header from '../header/Header';
+import Header from '../../components/header';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function ConfirmationPage() {
 
   return (
     <div className="wrapper confirm-page-wrapper">
-      <Header btn_text="Выйти" loggedIn={true}/>  
+      <Header btnText="Выйти" loggedIn={true}/>  
       <main className="main">
         <section className="content">
           <h2>Подтвердите ваш e-mail</h2>

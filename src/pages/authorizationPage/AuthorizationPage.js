@@ -1,13 +1,13 @@
 
-import './Authorizer.css';
-import facebook_icon from "../img/fasebook.svg";
-import google_icon from "../img/google.svg";
+import facebook_icon from "../../assets/img/fasebook.svg";
+import google_icon from "../../assets/img/google.svg";
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import Header from '../header/Header';
+import Header from '../../components/header';
 import { Link, useNavigate } from 'react-router-dom';
+import './AuthorizationPage.css';
 
-function Authorizer() {
+function AuthorizationPage() {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({email: "example@example.com", password: "password2021"});
@@ -35,7 +35,7 @@ function Authorizer() {
 
   return (
     <div className="wrapper">
-      <Header p_text="У вас нет аккаунта?" btn_text="Регистрация" path="/registration"/>  
+      <Header pText="У вас нет аккаунта?" btnText="Регистрация" path="/registration"/>  
       <main className="main">
         <section className="content login-content">
           <h1>Войти</h1>
@@ -67,4 +67,4 @@ function Authorizer() {
   );
 }
 
-export default Authorizer;
+export default AuthorizationPage;

@@ -1,11 +1,11 @@
 
 import './restorePasswordPage.css';
 import { useForm } from 'react-hook-form';
-import logo from "../img/LiveDune.svg";
-import lock_svg from "../img/lock.svg";
+import logo from "../../assets/img/LiveDune.svg";
+import lock_svg from "../../assets/img/lock.svg";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import letter_svg from "../img/letter.svg";
+import letter_svg from "../../assets/img/letter.svg";
 
 function RestorePasswordPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,17 +30,16 @@ function RestorePasswordPage() {
     }, 2000);
   };
 
-  console.log("isLoading",isLoading)
 
   if (letterWasSent) {
     return (
       <div className="wrapper email-sent-wrapper">
         <header className="header">
-          <img className="logo" src={logo} alt="Logo company" width="120" height="40"></img>
+          <img className="logo" src={logo} alt="Logo company" width="120" height="40"/>
         </header>
         <main className="main">
           <section className="content">
-            <img className="letter-svg" src={letter_svg} alt="Letter"></img>
+            <img className="letter-svg" src={letter_svg} alt="Letter"/>
             <h2>Письмо отправлено</h2>
             <p className="text-grey">На указанный вами e-mail было отправлено письмо для смены пароля</p>
             <Link to="/" className="blue-button">Вернуться на главную</Link>
@@ -53,11 +52,11 @@ function RestorePasswordPage() {
   return (
     <div className="wrapper respassword-wrapper">
       <header className="header">
-        <img className="logo" src={logo} alt="Logo company" width="120" height="40"></img>
+        <img className="logo" src={logo} alt="Logo company" width="120" height="40"/>
       </header>
       <main className="main">
         <section className="content">
-          <img className="lock-svg" src={lock_svg} alt="Lock"></img>
+          <img className="lock-svg" src={lock_svg} alt="Lock"/>
           <h2>Восстановить пароль</h2>
           <p className="text-grey">Введите e-mail, на который регистрировались ранее</p>
           
